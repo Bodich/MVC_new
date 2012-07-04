@@ -1,6 +1,6 @@
 <?php
 
-/**
+/** 
  * Получаем GET переменную   
  * Receive GET a variable  
  */

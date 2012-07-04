@@ -1,0 +1,10 @@
+#cat_add{}
+.round_shadow{
+    -moz-border-radius 7px;
+    -webkit-border-radius: 7px;
+    webkit-box-shadow: -5px -5px 20px #222;
+    -moz-box-shadow: -5px -5px 20px #222;
+    box-shadow: -5px -5px 20px #222;  
+
+}
+#cat_name{height: 25px;}

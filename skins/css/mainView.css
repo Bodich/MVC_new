@@ -1,0 +1,23 @@
+#mainCat{
+    font-size: 14px;
+}
+#mainTitle{
+     
+    font-size: 18px;
+    font-style:  normal;
+    font-weight:  bolder;
+    text-align: center;
+    color: red;
+}
+ #mainView{
+   margin:  30px;
+     
+}
+#top{
+  padding: 15px;  
+}
+#midle{
+    padding-left:  25px;
+    padding-right: 25px;
+    font-size: 16px;
+}

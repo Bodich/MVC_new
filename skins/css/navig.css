@@ -1,0 +1,90 @@
+
+
+ol{
+padding-left:1px;
+margin-left:1px;
+}
+ ul {
+margin-left:1px;
+padding-left:1px;
+}
+
+strong.page{
+    
+    
+    
+    vertical-align:middle;
+   
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: 7px;
+            padding-top: 7px;
+            border:0px solid #EAEEF8;
+            background-image:url("navig_img/bb.png") ;
+            margin: 3px;
+            font-family: arial;
+            color:white;
+            font-size: 15px
+     /*-webkit-box-shadow: 0px 0px 15px #222;
+    -moz-box-shadow: 0px 0px 15px #222;
+    box-shadow: 0px 0px 15px #222;    
+   */
+    
+    
+            }
+
+a.page:link, 
+ a.page:visited{
+               background-image:url("navig_img/by.png") ;
+                margin: 3px;
+               font-family: arial;
+               text-decoration: none;
+               font-size: 13px;
+               padding-bottom: 8px;
+               padding-top: 8px;
+               padding-left: 13px;
+               padding-right: 12px;
+               border:0px solid  #004080;
+               color: #3366FF;  background-repeat: no-repeat;     
+              
+           /*  -webkit-box-shadow: 0px 0px 15px #222;
+             -moz-box-shadow: 0px 0px 15px #222;
+             box-shadow: 0px 0px 15px #222;    
+   */
+            
+            
+              }
+a.page:hover{
+    background-image:url("navig_img/bo.png") ;
+    text-decoration: underline;
+    color: white; background-repeat: no-repeat;
+}
+ 
+
+a.pagea:link, 
+a.pagea:hover, 
+a.pagea:visited{
+               width: 410px;
+               background-image:url("navig_img/byn.png") ;
+               background-repeat: no-repeat;
+                margin: 3px;
+               text-decoration: none;
+               font-size: 13px;
+               padding-bottom: 8px;
+               padding-top: 8px;
+               padding-left: 13px;
+               padding-right: 12px;
+               border:0px solid  #004080;
+               color: #3366FF;      
+             
+             /*-webkit-box-shadow: 0px 0px 15px #222;
+             -moz-box-shadow: 0px 0px 15px #222;
+             box-shadow: 0px 0px 15px #222;    
+   */
+              }
+             
+              a.pagea:hover{
+    background-image:url("navig_img/bon.png") ;
+    text-decoration: underline;
+    color: white; background-repeat: no-repeat;
+}

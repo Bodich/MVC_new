@@ -1,0 +1,53 @@
+ 
+#table{
+    border-spacing: 0px;
+    width: 756px;
+     
+
+}
+
+#top{
+    background-image: url('preView/top.jpg');
+    height: 137px;
+    background-repeat: no-repeat;
+
+
+}
+#top p{
+    padding: 5px;
+    text-align: left;
+    padding-left: 20px;
+     
+     
+
+}
+#midle{
+    background-image: url('preView/midle.jpg');
+    width: 756px;
+    background-repeat: repeat-y;
+     padding: 10px;
+}
+ 
+
+#bottom{
+    background-image: url('preView/bottomm.png');
+    height: 9px;
+    background-repeat: no-repeat;
+}
+#bot {
+    height: 95px;
+    background-image: url('preView/bottom-b.jpg');
+    background-repeat: no-repeat;
+}
+
+.title{
+    font-size: 18px;
+    font-weight:  bolder;
+    color: red;
+
+}
+
+.link{
+    margin-right: 70px;
+}
+ 

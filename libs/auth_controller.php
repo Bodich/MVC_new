@@ -42,7 +42,8 @@
        
         
 if (isset($POST['login_a']) ){
-     $error = chek_users($POST['login_a'],$POST['pass'],$POST['email']);
+   //$error = $user_auth_controller->chek_user_to_autorize($POST);
+      $error = chek_users($POST['login_a'],$POST['pass'],$POST['email']);
         }
         
   if(isset($_SESSION['user'])){

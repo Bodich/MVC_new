@@ -73,11 +73,14 @@
         </tr>
         <tr>
           <td> 
+              <?php  if ($res['status'] != 'blocked') {    ?>
+    
+   
       <form action="<?php echo $_SERVER['PHP_SELF']?>?type=profile" method="post">
           <input type="hidden" name="update_profile" /> 
           <input type="submit" value="update_profile" /> 
     </form><br />
-              
+      <?php }else echo 'you are blocked' ?>         
     
    <?php  if ($res['change_status']) {    ?>
    <ul>
@@ -92,9 +95,7 @@
       <li><a href="?do=art&action=update">Редагувати статью(update page)</a> </li>
       <li><a href="?do=art&action=del">Видалити статью(del page)</a> </li>
    <?php } ?>
-    <?php  if ($res['change_status']) {    ?>
     
-   <?php } ?>
           </td>
         </tr>
        </table>

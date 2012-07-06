@@ -1,5 +1,7 @@
 <?php
  $art_controller = new art_controller(); 
+ $user_auth_controller = new user_auth_controller(); 
+ 
  function res2array($data){
             while($row = mysql_fetch_assoc($data)){
                 $arr[] = $row;

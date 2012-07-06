@@ -7,7 +7,7 @@
         <tr><td>
      <form action="?type=preView" method="post">
          <p>Логин:</p><br />
-             <input type="text" name="login" />
+             <input type="text" name="login_a" />
          <label>Пароль:</label><br />
              <input type="password" name="pass" /><br />
         <input type="submit" value="log in" />

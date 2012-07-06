@@ -3,6 +3,8 @@
   <form action="?type=regist" method="post">
          <p>login:</p> 
              <input type="text" name="login" /><br /><br />
+              <input type="hidden" name="avatar" value="skins/images/no_photo.jpg" />
+              <input type="hidden" name="status" value="user" /> 
          <p>email:</p>
              <input type="text" name="email" /><br /><br />
          <p>Password:</p> 

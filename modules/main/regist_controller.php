@@ -21,33 +21,53 @@
 
     if (isset($POST['email'])){ 
       $error_msg = check_data($POST['login'], $POST['pass'],$POST['confirm_pass'],$POST['email']);   
-        function put_user_to_db ($log,$pass,$email){
+        function put_user_to_db ($POST){
+             
+            extract($POST);
                   $date_reg = time();
                   $date_last_log = time();
                   $sql = "INSERT INTO users (
                                             name,
                                             pass,
                                             email,
+                                            avatar,
+                                            status,
                                             date_reg,
                                             date_last_log
                                                 ) VALUES (
-                                                    '$log',
+                                                    '$login',
                                                     '$pass',
                                                     '$email',
+                                                    '$avatar',
+                                                    '$status',
                                                     '$date_reg',
                                                     '$date_last_log'
                                                          )";
                   
                  $res = mysql_query($sql)  or die (mysql_error()); 
-               if($res) {$_SESSION['user'] = $log; 
-                   header('location:?type=regist&res=true');  
-                }  
+               if($res) { $sql = "SELECT 
+                                    id,
+                                    name
+                                     FROM users WHERE name ='".$login."'"; 
+                   $res = mysql_query($sql)  or die (mysql_error()); 
+                   $res = mysql_fetch_assoc($res);
+                                  $_SESSION['user_id'] = $res['id']; 
+                           }      $_SESSION['user'] = $login;
+                                  
+                       header('location:?type=regist&res=true');  
+                
               }
        
        
        if (empty($error_msg)){
-                put_user_to_db($POST["login"],$POST["pass"],$POST["email"]);
-            } 
+            
+           foreach ($POST as $v) {
+               $POST[$v] = trim($v);
+           }
+                put_user_to_db($POST);
+           
+                }
+             
         }   
               
     // $error_msg = 'Hello '.$POST['login'];

@@ -1,5 +1,12 @@
 <?php
  $art_controller = new art_controller(); 
+ function res2array($data){
+            while($row = mysql_fetch_assoc($data)){
+                $arr[] = $row;
+            }
+            return $arr;  
+}
+ 
 #Определил константы для подключения к серверу
  function connect() {
     define("HOST", "localhost");

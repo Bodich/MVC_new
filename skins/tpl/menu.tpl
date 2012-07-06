@@ -1,7 +1,7 @@
 <!-- skins/tpl/menu.tpl begin --> 
-Сегодня <?php echo formatDate(date("Y-m-d"), false) ?> года
- <ul> 
-    <li><a href="?type=preView">Главная страница(main page)</a></li> 
+<?php  echo TODAY.' '.formatDate(date("Y-m-d"), false).' '.YEAR?>
+ <ul>  
+    <li><a href="?type=preView"><?php echo MAIN_PAGE ?></a></li> 
      
 </ul> 
 

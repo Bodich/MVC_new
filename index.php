@@ -1,9 +1,10 @@
  <?php
    session_start(); 
-  
+  if (!isset($_SESSION['ln'])) $_SESSION['ln'] = 'ua'; 
+  if (isset($_GET['ln'])){$_SESSION['ln'] = $_GET['ln'];}
     header("Content-Type: text/html; charset=utf-8"); 
     error_reporting(E_ALL); 
-  	
+  	 echo $_SERVER['QUERY_STRING'];
 /**
 * Получаем файл переменных 
 * Receive a variables file 
@@ -15,7 +16,7 @@
 * Подключаем файл общих функций
 */ 
      include './libs/default.php';
-	
+     include './language/'.$_SESSION['ln'].'.php';
 /**
 * We put in order a conclusion
 * Приводим в порядок вывод

@@ -47,8 +47,8 @@ if (isset($POST['login_a']) ){
         }
         
   if(isset($_SESSION['user'])){
-      $hello_admin = 'здравсвуйте '.$_SESSION['user'];
-      $hello_admin .= "<br /><a href ='?type=profile'>Profile</a>";
+      $hello_admin = GRITINGS.' '.$_SESSION['user'];
+      $hello_admin .= "<br /><a href ='?type=profile'>".PROFILE_ENTER."</a>";
       } 
 
   if (isset($POST['exit'])){

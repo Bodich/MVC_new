@@ -13,22 +13,22 @@
     <table style="border: 0px solid black; height:300px;">
       <tr>
             <td>
-                <p>You name :</p>
+                <p><?php echo USER_LOGIN?></p>
                 <input class="round_shadow" name="name" value="<?php echo $res['name'] ?>" >  
             </td>
      </tr>
         <tr>
             <td>
-           <p>You mail :</p>
+           <p><?php echo USER_EMAIL?></p>
               <input class="round_shadow"   name="email"  value=" <?php echo $res['email']?>" /><br /><br /> 
             </td>
         </tr>
         <tr>
             <td>
-           <p>You password :</p>
+           <p><?php echo USER_PASS?></p>
               <input class="round_shadow"   name="pass"  value=" <?php echo $res['pass']?>" /><br /><br /> 
               <input type="hidden" name="make_update" value="1" >
-              <input type=submit value="Save changes">
+              <input type=submit value="<?php echo PROFILE_SAVE?>">
             </td>
         </tr>
                  
@@ -47,27 +47,27 @@
        <table style=" width: 300px; border: 0px solid black;  height:300px; ">
       <tr>
           <td >
-                <p>Name :
+                <p><?php echo USER_LOGIN ?> :
                  <?php echo $res["name"] ?> </p>  
             </td>
      </tr>
         <tr>
-            <td><p>Email :
+            <td><?php echo USER_EMAIL?> :
                 <?php echo $res["email"] ?></p>
             </td>
         </tr>
         <tr>
-            <td><p>status :
+            <td><p><?php echo USER_STATUS?> :
                 <?php echo $res["status"] ?></p>
             </td>
         </tr>
         <tr>
-            <td><p>Register date :
+            <td><p> <?php echo USER_REGISTER_DATE?> :
                 <?php echo date('Y-d-h',$res["date_reg"]); ?></p>
             </td>
         </tr>
         <tr>
-            <td><p>Last login :
+            <td><p> <?php echo USER_LAST_ENTER?> :
                 <?php echo date('d-m-Y:h-m-s',$res["date_last_log"]); ?></p>
             </td>
         </tr>
@@ -78,22 +78,22 @@
    
       <form action="<?php echo $_SERVER['PHP_SELF']?>?type=profile" method="post">
           <input type="hidden" name="update_profile" /> 
-          <input type="submit" value="update_profile" /> 
+          <input type="submit" value="<?php echo PROFILE_UPDATE_LINK?>" /> 
     </form><br />
       <?php }else echo 'you are blocked' ?>         
     
    <?php  if ($res['change_status']) {    ?>
    <ul>
-           <li><a href="<?php echo $_SERVER['PHP_SELF']?>?type=user_update">show users</a></li>
-           <li><a href="?do=art&action=add">Добавити статью(add page)</a></li>
-           <li><a href="?do=art&action=update">Редагувати статью(update page)</a> </li>
-           <li><a href="?do=art&action=del">Видалити статью(del page)</a> </li>
+           <li><a href="<?php echo $_SERVER['PHP_SELF']?>?type=user_update"><?php echo USER_SHOW_LINK?></a></li>
+           <li><a href="?do=art&action=add"><?php echo ART_ADD_LINK?></a></li>
+           <li><a href="?do=art&action=update"><?php echo ART_REDACT_LINK?></a> </li>
+           <li><a href="?do=art&action=del"><?php echo ART_DELL_LINK?></a> </li>
     </ul>
    <?php } ?>
     <?php  if ($res['update_articles'] && $res['status'] != 'admin') {    ?>
-      <li><a href="?do=art&action=add">Добавити статью(add page)</a></li>
-      <li><a href="?do=art&action=update">Редагувати статью(update page)</a> </li>
-      <li><a href="?do=art&action=del">Видалити статью(del page)</a> </li>
+      <li><a href="?do=art&action=add"><?php echo ART_ADD_LINK?></a></li>
+      <li><a href="?do=art&action=update"><?php echo ART_REDACT_LINK?></a> </li>
+      <li><a href="?do=art&action=del"><?php echo ART_DELL_LINK?></a> </li>
    <?php } ?>
     
           </td>

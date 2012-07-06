@@ -1,5 +1,6 @@
   <?php
-  if (isset($_GET['dell'])){echo 'Delete sucesfull';} 
+  if (isset($_GET['dell'])){echo PROFILE_DELL_OK;}
+  if (isset($_GET['update'])){echo PROFILE_UPDATE_OK;} 
   if($_SESSION['status'] == 'admin'){
          $sql =  "SELECT *  
                         FROM users ";

@@ -15,7 +15,7 @@
                                                     )";
 
                 $res = mysql_query($sql)  or die (mysql_error('sss'));  
-                if($res){echo 'thank you for add article' ;}
+                if($res){echo ART_ADD_OK ;}
                 else echo 'Пмилка запису статті в базу';
             }
         

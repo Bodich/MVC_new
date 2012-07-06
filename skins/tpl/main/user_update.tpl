@@ -1,6 +1,6 @@
    <?php if(!isset($POST['user_update']) && !isset($POST['user_delete'])){ ?>
 <table border="1" style=" width: 500px;">
-    <tr> <th>id</th><th>name</th><th>status</th><th>action</th></tr> 
+    <tr> <th>id</th><th><?php echo USER_LOGIN?></th><th><?php echo USER_STATUS?></th><th><?php echo USER_ACTION?></th></tr> 
  <?php foreach ($users_array as $item){?>
      <tr>
     <td><?php echo $item['id']?></td>   
@@ -10,12 +10,12 @@
          <form action="<?php echo $_SERVER['PHP_SELF']?>?type=user_update" method="post">
              <input type="hidden" name="id" value="<?php echo $item['id']?>" /> 
              <input type="hidden" name="user_update" /> 
-          <input type="submit" value="REDACT" /> <br /><br />
+          <input type="submit" value="<?php echo PROFILE_UPDATE_LINK?>" /> <br /><br />
           </form>
        <form action="<?php echo $_SERVER['PHP_SELF']?>?type=user_update" method="post">
           <input type="hidden" name="id" value="<?php echo $item['id']?>"/> 
           <input type="hidden" name="make_dell" value="1" /> 
-          <input type="submit" value="DELETE" /> <br /><br />
+          <input type="submit" value="<?php echo PROFILE_DELL_LINK?>" /> <br /><br />
      </form>
      </td> 
      <tr>
@@ -30,31 +30,31 @@
         <td >
             <img  src="<?php echo $res['avatar']?>" />
       
-        <p>Change photo :</p>
+        <p><?php echo PROFILE_CHANGE_PHOTO?></p>
               <input type=file name=uploadfile>
       </td>
    <td>  
     <table style="border: 0px solid black; height:300px;">
       <tr>
             <td>
-                <p>User name :</p>
+                <p><?php echo USER_LOGIN?></p>
                 <input class="round_shadow" name="name" value="<?php echo $res['name'] ?>" >  
             </td>
      </tr>
         <tr>
             <td>
-           <p>User mail :</p>
+           <p><?php echo USER_EMAIL?></p>
               <input class="round_shadow"   name="email"  value=" <?php echo $res['email']?>" /><br /><br /> 
             </td>
         </tr>
         <tr>
             <td>
-           <p>User password :</p>
+           <p><?php echo USER_PASS?></p>
               <input class="round_shadow"   name="pass"  value=" <?php echo $res['pass']?>" /><br /><br /> 
-              <p>User status :</p>
+              <p><?php echo USER_STATUS?></p>
               
              <select size="1"   name="status">
-                    <option disabled>Выберите статус</option>
+                    <option disabled><?php echo USER_STATUS?></option>
                    <?php foreach ($res_p as $item){
                    if ($res['status'] == $item['status'] ){ ?>
                   <option selected value="<?php echo $item['status']?>"><?php echo $item['status']?></option>
@@ -64,7 +64,7 @@
              </select><br /><br />
               <input type="hidden" name="id" value="<?php echo $res['id']?>" /> 
               <input type="hidden" name="make_update" value="1" >
-              <input type=submit value="Save changes">
+              <input type=submit value="<?php echo PROFILE_SAVE?>">
             </td>
         </tr>
                  

@@ -11,7 +11,7 @@
                        <td>
                            <p> text article </p>
                           <?php echo $item['main_text']?>
-                          <a href='?type=mainView&id=<?php echo $item["id"]?>'>Читать полностью</a>
+                          <a href='?type=mainView&id=<?php echo $item["id"]?>'> <?php echo  ART_READ_ALL_LINK?></a>
                        </td>
                    </tr>
                 </table> 

@@ -27,6 +27,9 @@
                                 <?php  echo $content ;?>
                             </td>
                             <td id="right_td">
+                                
+                                <a href="?<?php echo $_SERVER['QUERY_STRING']?>&ln=en"><img src="language/en.png"></a> 
+                                <a href="?<?php echo $_SERVER['QUERY_STRING']?>&ln=ua"><img src="language/ua.png"></a>
                                 <?php
                                 include './skins/tpl/auth.tpl';
                                 ?>

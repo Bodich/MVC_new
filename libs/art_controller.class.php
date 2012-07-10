@@ -8,10 +8,14 @@
                 extract($POST);
                     $sql = "INSERT INTO tmp_table (
                                         title,
-                                        main_text 
+                                        main_text,
+                                        title_en,
+                                        main_text_en
                                                 ) VALUES (
                                                     '$title',
-                                                    '$main_text' 
+                                                    '$main_text',
+                                                    '$title_en',
+                                                    '$main_text_en'
                                                     )";
 
                 $res = mysql_query($sql)  or die (mysql_error('sss'));  

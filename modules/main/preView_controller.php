@@ -1,12 +1,10 @@
 <?php
-    
-
+  
 $sql = "SELECT 
                  id,
-                 title,
-                 main_text  
+                 $field_t,
+                 $field_m_text  
                      FROM tmp_table ";
- 
- $res = mysql_query($sql) or die (mysql_error());
- $arr_data = res2array($res);
+ $arr_data = $db->query($sql, PDO::FETCH_ASSOC);
+ //print_r($arr_data);
  

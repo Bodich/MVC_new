@@ -1,7 +1,20 @@
 <?php
  $art_controller = new art_controller(); 
  $user_auth_controller = new user_auth_controller(); 
+ $db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'vertrigo');
  
+ //$insert = $bd->exec('INSERT INTO `table` (`имя столбца`) VALUES("значение")');
+ // $update = $bd->exec('UPDATE `table` SET `имя столбца`="значение"'); 
+ //$sel = $bd->query('SELECT * FROM `table`;'); // значение FALSE в случае ошибки
+ //$res = $bd->query('SELECT * FROM `table`;');
+ //while ($row = $res->fetch(PDO::(FETCH_BOTH или FETCH_ASSOC или FETCH_NUM или FETCH_OBJ или FETCH_LAZY))) {
+//...     цикл...
+ //
+ //}
+ //$res = $db->query(“SELECT * FROM users”, PDO::FETCH_ASSOC);
+//foreach ($res as $row) {
+// $row - ассоциативный массив значений
+//}
  function res2array($data){
             while($row = mysql_fetch_assoc($data)){
                 $arr[] = $row;

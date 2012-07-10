@@ -19,6 +19,15 @@
        $art_controller->art_make_update($POST);
         unset($POST['id']);
        }
-  
+       function dell_rait($id){
+         $db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'vertrigo');
+           $sql = "DELETE 
+                        FROM art_rait WHERE art_id = '$id'";
+       $dell = $db->exec($sql);  
+       }
+     if (isset($_POST['rait_dell'])){
+         
+         dell_rait($_POST['rait_dell']);
+     }  
        
-    }
+       }

@@ -18,7 +18,12 @@
    <button class='btn btn-success' type="submit"><?php echo ART_REDACT_LINK?></button>
 </form>   
 
-<?php } ?>
+<?php if ($_SESSION['status'] == 'admin'){?>
+     <form action="<?php echo $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']?>" method="post">
+        <input type="hidden" name="rait_dell" value="<?php echo $res[0]['id']?>">
+       <INPUT type="submit" value="Видалити рейтинг" >  
+     </form>
+<?php } } ?>
 
 
  

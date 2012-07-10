@@ -1,10 +1,20 @@
  <?php
-   session_start(); 
+ header("Content-Type: text/html; charset=utf-8"); 
+    error_reporting(E_ALL); 
+ 
+ session_start(); 
   if (!isset($_SESSION['ln'])) $_SESSION['ln'] = 'ua'; 
   if (isset($_GET['ln'])){$_SESSION['ln'] = $_GET['ln'];}
-    header("Content-Type: text/html; charset=utf-8"); 
-    error_reporting(E_ALL); 
-  	 echo $_SERVER['QUERY_STRING'];
+    
+    $_SERVER['QUERY_STRING'] = str_replace('&amp;ln='.$_SESSION['ln'],'',$_SERVER['QUERY_STRING']);
+  	
+    $field_t = 'title';
+    $field_m_text = 'main_text';
+      if ($_SESSION['ln'] == 'en'){
+        $field_t = 'title_en';
+        $field_m_text = 'main_text_en';
+         }
+       
 /**
 * Получаем файл переменных 
 * Receive a variables file 

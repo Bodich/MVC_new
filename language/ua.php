@@ -3,7 +3,21 @@
 /**
 * Варианты модуля приветствия  
 * Variants of the module of a greeting
-*/ //articles
+*/ 
+ // art_rait
+    define('AMOUNT_VOTES',       'кількість голосів'); 
+    define('ART_RAIT',           'рейтинг статті'); 
+    define('ART_ESTIMATION',     'Ваша оцінка статті');
+    define('DELL_ESTIMATION',    'Видалити оцінку'); 
+    define('TO_VOTE',            'Голосувати');
+  //comments
+    define('ADD_COMMENT',        'додати коментар'); 
+    define('COM_SUBJECT',        'тема'); 
+    define('COM_TEXT',           'коментар');  
+    define('AUTOR',              'автор');
+    define('DATE_PUBLICK',       'дата публікації');
+    define('DELL_COMMENT_LINK',  'видалити коментар');
+// //articles
     define('MAIN_PAGE',          'Головна сторінка'); 
     define('ART_ADD_LINK',       'додати статтю'); 
     define('ART_REDACT_LINK',    'редагувати статтю'); 
@@ -45,6 +59,8 @@
      define('USER_REGISTER_DATE',    'дата реєстрації');
      define('USER_LAST_ENTER',       'останній вхід');
      define('USER_ACTION',           'дії');
+     define('USER_LOGIN_R_ERROR',    'Увага, логін уже існує');
+     define('USER_PASS_R_ERROR',     'Увага, паролі не співпадають');
     //date 
      define('TODAY',                  'Сьогдні');
      define('YEAR',                   'року');

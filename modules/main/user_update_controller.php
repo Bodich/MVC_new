@@ -1,12 +1,14 @@
   <?php
+  
   if (isset($_GET['dell'])){echo PROFILE_DELL_OK;}
   if (isset($_GET['update'])){echo PROFILE_UPDATE_OK;} 
   if($_SESSION['status'] == 'admin'){
          $sql =  "SELECT *  
                         FROM users ";
-            $res_u = mysql_query($sql)  or die (mysql_error());       
-               $users_array = res2array($res_u);
-               
+              //$res_u = mysql_query($sql)  or die (mysql_error());       
+             //  $users_array = res2array($res_u);
+               $users_array  = $db->query($sql, PDO::FETCH_ASSOC);
+    $db = new PDO('mysql:host=localhost;dbname=test', 'root', 'vertrigo');           
     if(isset($POST['user_update'])){
         $id = $POST['id'];
             $sql = "SELECT 
@@ -20,21 +22,20 @@
                          u.date_last_log 
                       FROM users u  
                               WHERE   u.id= '$id'";
-              $res = mysql_query($sql)  or die (mysql_error()); 
-             $res = mysql_fetch_assoc($res); 
+             $column = $db->query($sql);
+             $res = $column->fetch(PDO::FETCH_ASSOC);
          
               $sql = "SELECT 
                         status 
                             FROM previlegius";
-             $res_p = mysql_query($sql)  or die (mysql_error()); 
-             $res_p = res2array($res_p); 
-      // echo '<pre>';
-      //print_r($res);      
-             
-             }
+              $res_p = $db->query($sql, PDO::FETCH_ASSOC);
+             //$res_p = mysql_query($sql)  or die (mysql_error()); 
+             //$res_p = res2array($res_p); 
+            }
      
      
      function  make_update($POST){
+         $db = new PDO('mysql:host=localhost;dbname=test', 'root', 'vertrigo');
          extract($POST);
      if (!empty($_FILES['uploadfile']['tmp_name'])){
          echo $POST['id'];
@@ -46,7 +47,9 @@
                             SET 
                               avatar  = '$avatar' 
                                          WHERE id='$id.'";
-            $res = mysql_query($sql)  or die (mysql_error());
+             $column = $db->query($sql);
+             $res = $column->fetch(PDO::FETCH_ASSOC);
+           // $res = mysql_query($sql)  or die (mysql_error());
       }
       echo $status; echo $POST['id'];
          $sql = "UPDATE users 
@@ -56,8 +59,9 @@
                               pass   = '$pass',
                               status = '$status'
                                           WHERE id='$id'";
-          
-        $res1 = mysql_query($sql)  or die (mysql_error());
+          $column = $db->query($sql);
+          $res1 = $column->fetch(PDO::FETCH_ASSOC);
+       // $res1 = mysql_query($sql)  or die (mysql_error());
          header('location:?type=user_update&update=true');
    } 
     if (($POST['make_update'] == 1)) {
@@ -66,13 +70,16 @@
      }
      
      function  make_dell($POST){
+         $db = new PDO('mysql:host=localhost;dbname=test', 'root', 'vertrigo'); 
        if (file_exists('skins/images/'.$POST["id"].'.jpeg')){
           unlink('skins/images/'.$POST["id"].'.jpeg');
        } 
         $sql = " DELETE FROM 
                             users
                                  WHERE id='".$POST["id"]."'";
-        $res = mysql_query($sql)  or die (mysql_error());
+         $del = $db->exec($sql);
+          
+       // $res = mysql_query($sql)  or die (mysql_error());
       }
     if (($POST['make_dell'] == 1))   { make_dell($POST);
       header('location:?type=user_update&dell=true');

@@ -37,7 +37,7 @@
   </tr>
   </table>      
    </form>      
-    <?php }else{  ?>
+    <?php }elseif(!isset($_GET['profile_id'])){  ?>
 <table style=" margin-left: 100px;  width: 400px; border: 1px solid black; height:300px;font-weight: bold;"> 
     <tr>
     <td>
@@ -79,6 +79,9 @@
       <form action="<?php echo $_SERVER['PHP_SELF']?>?type=profile" method="post">
           <input type="hidden" name="update_profile" /> 
           <input type="submit" value="<?php echo PROFILE_UPDATE_LINK?>" /> 
+    </form><br /><form action="<?php echo $_SERVER['PHP_SELF']?>?type=profile" method="post">
+        <input type="hidden" name="make_dell" value="1"  /> 
+          <input type="submit" value="<?php echo PROFILE_DELL_LINK?>" /> 
     </form><br />
       <?php }else echo 'you are blocked' ?>         
     
@@ -102,5 +105,40 @@
      </td>
 </tr>
  </table>
-     <?php  }?>
+     <?php  }else {?>
+        <table style=" margin-left: 100px;  width: 400px; border: 1px solid black; height:300px;font-weight: bold;"> 
+    <tr>
+    <td>
+        <img src="<?php echo $res['avatar']?>" />
+    </td>
+   <td style="padding: 20px;"> 
+       <table style=" width: 300px; border: 0px solid black;  height:300px; ">
+      <tr>
+          <td >
+                <p><?php echo USER_LOGIN ?> :
+                 <?php echo $res["name"] ?> </p>  
+            </td>
+     </tr>
+         
+        <tr>
+            <td><p><?php echo USER_STATUS?> :
+                <?php echo $res["status"] ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td><p> <?php echo USER_REGISTER_DATE?> :
+                <?php echo date('Y-d-h',$res["date_reg"]); ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td><p> <?php echo USER_LAST_ENTER?> :
+                <?php echo date('d-m-Y:h-m-s',$res["date_last_log"]); ?></p>
+            </td>
+        </tr>
+         
+       </table>
+     </td>
+</tr>
+ </table>
+     <?php } ?>
  <!-- skins/tpl/main/profile.tpl end -->
